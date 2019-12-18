@@ -3,7 +3,7 @@
 \alias{qgtools}
 \docType{package}
 \title{
-Tools for Quantitative Genetics Analyses
+A Tool Set for Quantitative Genetics Analyses
 }
 \description{
 We integrated with two linear mixed model approaches (MIQNUE and REML) and several resampling techniques for various genetics models. With these two types of approaches, various unbalanced data structures, missing data, and any irregular genetic mating designs can be analyzed and statistically tested. This package also offers fast computations for many large data sets.
@@ -12,16 +12,16 @@ We integrated with two linear mixed model approaches (MIQNUE and REML) and sever
 \tabular{ll}{
 Package: \tab qgtools\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-09-05\cr
+Version: \tab 2.0\cr
+Date: \tab 2019-12-17\cr
 License: \tab GPL -2\cr
 }
-The current version includes two major components: (1) genetic model analyses for various genetic mating genetic and breeding data and (2) yield stability. Both components have been integrated with resampling approaches. Regarding the first component, two linear mixed model approaches, MINQUE and REML are employed to analyze various genetic mating designs and data structures. The adjusted unbiased prediction (AUP) method is employed to predict random effects (Zhu, 1993). Functions for model/data evaluations are provided too. Randomized group-based jackknife technique is integrated for various statistical tests such as for variance components, fixed effects, and random effects (Wu et al., 2012). Four commonly used genetic models: AD (additive-dominance), ADC (AD model with cytoplasmic effects), ADM (AD model with maternal effects), and ADAA (AD model with additive-by-additive interaction effects), are provided. For the second component, we add regression based yield stability with integration of bootstrapping and permutation tests included.  Genotypic means, ranks, and variations across test environments can be calculated with resampling techniques integrated. Please refer to each function and its example R codes and data sets for detailed information and better understanding. More functions for genetic data analyses will be provided in the future.
+The current version includes two major components: (1) genetic model analyses for various genetic mating genetic and breeding data and (2) yield stability. Both components have been integrated with resampling approaches. Regarding the first component, two linear mixed model approaches, MINQUE and REML are employed to analyze various genetic mating designs and data structures. The adjusted unbiased prediction (AUP) method is employed to predict random effects (Zhu, 1993). Functions for model/data evaluations are provided too. Randomized group-based jackknife technique is integrated for various statistical tests such as for variance components, fixed effects, and random effects (Wu et al., 2012). Four commonly used genetic models: AD (additive-dominance), ADC (AD model with cytoplasmic effects), ADM (AD model with maternal effects), and ADAA (AD model with additive-by-additive interaction effects), are provided.
 }
 \author{
-Jixiang Wu: Plant Science Department, South Dakota State University, Brookings, SD 57007
+Jixiang Wu: Agronomy, Horticulture & Plant Science Department, South Dakota State University, Brookings, SD 57007
 
-Maintainer: Jixiang Wu <qgtools@gmails.com>
+Maintainer: Jixiang Wu <jixiang.wu@sdstate.edu>
 }
 \references{
 

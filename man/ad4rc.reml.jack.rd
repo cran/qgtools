@@ -1,5 +1,5 @@
-\name{adrc.reml.jack}
-\alias{adrc.reml.jack}
+\name{ad4rc.reml.jack}
+\alias{ad4rc.reml.jack}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 AD model with row and column effects analyzed by MINQUE and jackknife
@@ -8,7 +8,7 @@ AD model with row and column effects analyzed by MINQUE and jackknife
 An AD model with row and column effects included is used for controlling field variation. This model will be analyzed by MINQUE approach and tested by jackknife technique. The data set can be irregular or missing but the field layout should be rectangular. It can analyze any genetic mating designs and data including F1, F2, or F3 with parents..
 }
 \usage{
-adrc.reml.jack(Y, Ped, Row = NULL, Col = NULL, JacNum = NULL, JacRep = NULL)
+ad4rc.reml.jack(Y, Ped, Row = NULL, Col = NULL, JacNum = NULL, JacRep = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,7 +16,7 @@ adrc.reml.jack(Y, Ped, Row = NULL, Col = NULL, JacNum = NULL, JacRep = NULL)
 A data matrix for one or more traits
 }
   \item{Ped}{
-A pedigree matrix including Environment, Female, Male,Generation is required. 
+A pedigree matrix including Environment, Female1, Male1, Female2, Male2, Generation is required. 
 }
   \item{Row}{
 A vector for field rows. It can be default.

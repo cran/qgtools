@@ -60,7 +60,6 @@ Jixiang Wu <qgtools@gmail.com>
 
 \examples{
 
- library(qgtools)
  data(cotf12)
  #names(cotf12)
  dat=cotf12[which(cotf12$Year==1),]

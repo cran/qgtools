@@ -64,7 +64,8 @@ Jixiang Wu <qgtools@gmail.com>
   library(qgtools)
   data(cotf2)
   Ped=cotf2[,c(1:5)]
-  Y=cotf2[,-c(1:5)]
+  Y=cotf2[,6]
+  Y=data.frame(Y)
   YS=ad.simudata(Y,Ped,v=rep(20,7),b=c(100),SimuNum=10)
   res=ad.simu.jack(YS,Ped,JacNum=5)
   res

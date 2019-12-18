@@ -1,35 +1,42 @@
-\name{ad.mq}
-\alias{ad.mq}
-
+\name{ad4rc.mq}
+\alias{ad4rc.mq}
+%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Additive-dominance (AD) model with MINQUE analysis
+AD model with row and column effects
 }
 \description{
-An AD model can be analyzed by MINQUE approach, requiring no specific genetic mating designs or balance data. For reliable results, parents and F1s, 
-parents and F2s, are preferred.
+An AD model with row and column effects included is used for controlling field variation. The data set can be irregular or missing but the field layout should be rectangular. It can analyze any genetic mating designs and data including F1, F2, or F3 with parents..
 }
 \usage{
-ad.mq(Y, Ped)
+ad4rc.mq(Y, Ped, Row = NULL, Col = NULL)
 }
-
+%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{Y}{
-A trait matrix including one or more than one traits.
+A data matrix for one or more traits
 }
   \item{Ped}{
-A pedigree matrix including Environment, Female, Male, Generation, with or without block is required. So the matrix should include either 4 columns or 5 columns.
+A pedigree matrix including Environment, Female1, Male1, Female2, Male2, Generation is required. 
+}
+  \item{Row}{
+A vector for field rows. It can be default.
+}
+  \item{Col}{
+A vector for field colums.It can be default.
 }
 }
 \details{
-A pedigree matrix used for analysis is required in the order of Environment (column 1), Female(column 2), Male(column 3), Generation (column 4). Column 5 for block can be default. 
-Even though there is only one environment, this column is needed.
+If only row or column vector is included, this is equivallent to an AD model with block effects.
 }
 \value{
-Return a list of results: estimated variance components, estimated fixed  effects, and predicted random effects.
-
+Return a list of results: estimated variance components, estimated fixed  effects, and predicted random effects
+%%  ~Describe the value returned
+%%  If it is a LIST, use
+%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{comp2 }{Description of 'comp2'}
+%% ...
 }
 \references{
-
 Rao, C.R. 1971. Estimation of variance and covariance components-MINQUE theory. J Multiva Ana 1:19
 
 Wu, J., McCarty Jr., J.C., Jenkins, J.N. 2010. Cotton chromosome substitution lines crossed with cultivars: Genetic model evaluation and seed trait analyses. Theoretical and Applied Genetics 120:1473-1483.
@@ -44,27 +51,23 @@ Wu J., Bondalapati K., Glover K., Berzonsky W., Jenkins J.N., McCarty J.C. 2013.
 
 Zhu J. 1989. Estimation of Genetic Variance Components in the General Mixed Model. Ph.D. Dissertation, NC State University, Raleigh, U.S.A
 }
-
 \author{
 Jixiang Wu <qgtools@gmail.com>
 }
 
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+
 \examples{
-
- library(qgtools)
- data(cotf2)
- Ped=cotf2[,c(1:5)]
- Y=cotf2[,-c(1:5)]
- ## star
- # res=ad.mq(Y,Ped)
- # res$Var
- # res$FixedEffect
- # res$RandomEffect
-
- ##End
+  library(qgtools)
+  data(adrcdat)
+  str(adrcdat)
 
 }
-\keyword{ AD model }
-\keyword{ cotton }
-\keyword{ MINQUE }
-\keyword{ cotf2 }
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ad model}
+\keyword{MINQUE}
+\keyword{row effect}
+\keyword{column effect}

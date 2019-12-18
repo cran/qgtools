@@ -1,5 +1,5 @@
-\name{adrc.reml.jack}
-\alias{adrc.reml.jack}
+\name{ad4rc.mq.jack}
+\alias{ad4rc.mq.jack}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 AD model with row and column effects analyzed by MINQUE and jackknife
@@ -8,7 +8,7 @@ AD model with row and column effects analyzed by MINQUE and jackknife
 An AD model with row and column effects included is used for controlling field variation. This model will be analyzed by MINQUE approach and tested by jackknife technique. The data set can be irregular or missing but the field layout should be rectangular. It can analyze any genetic mating designs and data including F1, F2, or F3 with parents..
 }
 \usage{
-adrc.reml.jack(Y, Ped, Row = NULL, Col = NULL, JacNum = NULL, JacRep = NULL)
+ad4rc.mq.jack(Y, Ped, Row = NULL, Col = NULL, JacNum = NULL, JacRep = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,7 +16,7 @@ adrc.reml.jack(Y, Ped, Row = NULL, Col = NULL, JacNum = NULL, JacRep = NULL)
 A data matrix for one or more traits
 }
   \item{Ped}{
-A pedigree matrix including Environment, Female, Male,Generation is required. 
+A pedigree matrix including Environment, Female1, Male1, Female2, Male2,Generation is required. 
 }
   \item{Row}{
 A vector for field rows. It can be default.
@@ -32,7 +32,7 @@ Repeating times for jackknife process. The default is 1.
 }
 }
 \details{
-A pedigree matrix used for analysis is required in the order of Environment (column 1), Female(column 2), Male(column 3), Generation (column 4). Even though there is only one environment, this first column is needed.If only row or column vector is included, this is equivallent to an AD model with block effects.
+A pedigree matrix used for analysis is required in the order of Environment (column 1), Female1(column 2), Male1(column 3), Female2(column 4), Male2(column 5),Generation (column 6). Even though there is only one environment, this first column is needed.If only row or column vector is included, this is equivallent to an AD model with block effects.
 }
 \value{
 Return a list of results: estimated Variance components, estimated proportional variance components, estimated fixed  effects, and predicted random effects, and their statistical tests
@@ -66,28 +66,16 @@ Jixiang Wu <qgtools@gmail.com>
 
 \examples{
   library(qgtools)
-  data(adrcdat)
-  dat=adrcdat[which(adrcdat$Env==1&adrcdat$Row<=3),]
-  Ped=dat[,c(1,4,5,6)]
-  Y=as.matrix(dat[,8])
- 
-  colnames(Y)=colnames(dat)[8]
   
-  Row=dat$Row
-  Col=dat$Column
-
+  data(wheat)
+  str(wheat)
   
-  ##run AD model with field row and column effects 
-  res=adrc.reml.jack(Y,Ped,Row=Row,JacNum=5) 
-  res$Var
-  res$PVar
-  res$FixedEffect
-  res$RandomEffect
+  
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ad model}
-\keyword{REML}
+\keyword{MINQUE}
 \keyword{row effect}
 \keyword{column effect}
 \keyword{jackknife}

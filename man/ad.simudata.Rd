@@ -66,6 +66,7 @@ Jixiang Wu <qgtools@gmail.com>
  data(cotf2)
  Ped=cotf2[,c(1:5)]
  Y=cotf2[,-c(1:5)]
+ Y=data.frame(Y)
  
  YS=ad.simudata(Y,Ped,v=rep(20,7),b=c(100),SimuNum=10)
  

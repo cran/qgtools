@@ -64,8 +64,9 @@ Jixiang Wu <qgtools@gmail.com>
 library(qgtools)
  data(cotf2)
  Ped=cotf2[,c(1:5)]
- Y=cotf2[,-c(1:5)]
- 
+ #Y=cotf2[,-c(1:5)]
+ Y=cotf2[,6]
+ Y=data.frame(Y)
  YS=adm.simudata(Y,Ped,v=rep(20,11),b=c(100))
  
  ##End

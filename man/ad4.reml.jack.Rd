@@ -60,20 +60,8 @@ Jixiang Wu <qgtools@gmail.com>
 
  library(qgtools)
  data(wheat)
- n=nrow(wheat)
- id=sample(n,200)
- dat=wheat[id,]
- Ped=dat[,c(1:6)]
- Y=as.matrix(dat[,8])
- colnames(Y)=colnames(dat)[8]
- 
- res=ad4.reml.jack(Y,Ped,JacNum=5)
- res$Var
- res$PVar
- res$FixedEffect
- res$RandomEffect
-
- ##End
+ summary(wheat)
+  ##End
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
